@@ -50,8 +50,6 @@ const puppeteer = require('puppeteer');
             console.log('Saved!');
         });
 
-        // const pagination = Array.from(document.querySelectorAll('div.paginate-container'));
-        // console.log(pagination);
         const pagination = await page.evaluate(() => {
             const links = Array.from(document.querySelectorAll('div.paginate-container > div.BtnGroup > a'));
             return links.map(link => {
